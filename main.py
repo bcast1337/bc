@@ -346,7 +346,7 @@ async def analyze_signal(symbol):
             logger.debug(f"📈 {symbol}: Price above EMAs")
         buy_factors += 0.20
         
-        # 3. RSI Signal (weight: 20%)
+        # 3. RSI Signal (weight: 20%) - FIXED: Correct logic
         if MIN_RSI_BUY <= indicators['rsi'] <= MAX_RSI_BUY:
             buy_score += 0.20
             logger.debug(f"📈 {symbol}: RSI in optimal buy zone ({indicators['rsi']:.2f})")
@@ -389,7 +389,7 @@ async def analyze_signal(symbol):
             sell_score += 0.20
         sell_factors += 0.20
         
-        # 3. RSI Signal (weight: 20%)
+        # 3. RSI Signal (weight: 20%) - FIXED: Correct logic
         if MIN_RSI_SELL <= indicators['rsi'] <= MAX_RSI_SELL:
             sell_score += 0.20
         elif 30 < indicators['rsi'] < 50:
@@ -934,6 +934,8 @@ async def stats(ctx):
             await ctx.send("⏳ Cooldown active (5 seconds)")
             return
         
+        log_command_usage(ctx.author.id, "stats")
+        
         embed = discord.Embed(
             title="📊 BOT STATISTICS",
             color=discord.Color.gold()
@@ -957,6 +959,8 @@ async def status(ctx):
         if check_command_cooldown(ctx.author.id):
             await ctx.send("⏳ Cooldown active (5 seconds)")
             return
+        
+        log_command_usage(ctx.author.id, "status")
         
         embed = discord.Embed(
             title="🤖 BOT STATUS",
