@@ -37,16 +37,16 @@ if not TOKEN:
     exit(1)
 
 CHANNELS = {
-    "buy": 1509183831289233588,
-    "sell": 1509184056498065408,
-    "high_profit": 1509191481662115850,
-    "scalps": 1509191545071468584,
-    "analysis": 1509191576625221702,
-    "premium": 1509192066847080519,
-    "status": 1509191231857492172,
-    "updates": 1509191267026866228,
-    "news": 1509191779961016553,
-    "welcome": 1509203747840983231
+    "buy": 1509183831289233588,           # buy-signals
+    "sell": 1509184056498065408,          # sell-signals
+    "high_profit": 1509191481662115850,   # high-profit-signal
+    "scalps": 1509191545071468584,        # quick-scalps
+    "analysis": 1509191576625221702,      # market-analysis
+    "premium": 1509192066847080519,       # premium-analysis
+    "status": 1509191231857492172,        # status-bot
+    "updates": 1509191267026866228,       # updates
+    "news": 1509191779961016553,          # crypto-news
+    "welcome": 1509203747840983231        # welcome
 }
 
 COINS = ["BTCUSDT", "ETHUSDT", "SOLUSDT", "XRPUSDT", "BNBUSDT", "ADAUSDT", "DOGEUSDT"]
